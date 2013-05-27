@@ -13,4 +13,4 @@ build:
         name: run tests
         code: |-
           cd $WERCKER_ROOT
-          roundup ./test/*-test.sh
+          sudo roundup ./test/*-test.sh
