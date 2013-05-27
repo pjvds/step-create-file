@@ -1,9 +1,5 @@
 describe "create-file step"
 
-before() {
-    . lib/wercker-essentials.sh
-}
-
 it_fails_when_filename_is_missing() {
     src/run.sh 2>&1 | grep -q "missing filename option"
 }

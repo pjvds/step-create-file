@@ -13,6 +13,7 @@ build:
         name: set chmods
         code: |-
           cd $WERCKER_ROOT
+          chmod +x test.sh
           chmod -R +x ./lib
           chmod -R +x ./src
           chmod -R +x ./test
@@ -20,4 +21,4 @@ build:
         name: run tests
         code: |-
           cd $WERCKER_ROOT
-          sudo roundup ./test/*-test.sh
+          sudo ./test.sh
