@@ -1,3 +1,4 @@
+#!/bin/bash
 describe "create-file step"
 
 it_fails_when_filename_is_missing() {

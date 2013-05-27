@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 WARN_COLOR=$(tput setaf 3 ; tput bold)
 SUCCESS_COLOR=$(tput setaf 2 ; tput bold)
 ERROR_COLOR=$(tput setaf 1 ; tput bold)
