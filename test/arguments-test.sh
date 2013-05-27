@@ -3,7 +3,10 @@ describe "create-file step"
 before() {
     if ! type -f "_message" &> /dev/null
     then
+        echo "sourcing local wercker-essentials.sh"
         source lib/wercker-essentials.sh
+    else
+        echo "wercker-essentials available"
     fi
 }
 

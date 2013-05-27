@@ -10,6 +10,12 @@ build:
           make
           sudo make install
     - script:
+        name: set chmods
+        code: |-
+          cd $WERCKER_ROOT
+          chmod +x ./src/run.sh
+          chmod -R +x ./test
+    - script:
         name: run tests
         code: |-
           cd $WERCKER_ROOT
