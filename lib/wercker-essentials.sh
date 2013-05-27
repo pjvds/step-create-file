@@ -1,4 +1,3 @@
-#!/bin/bash
 WARN_COLOR=$(tput setaf 3 ; tput bold)
 SUCCESS_COLOR=$(tput setaf 2 ; tput bold)
 ERROR_COLOR=$(tput setaf 1 ; tput bold)
@@ -6,33 +5,33 @@ INFO_COLOR=$(tput setaf 7)
 DEBUG_COLOR=$(tput setaf 8)
 RESET_COLOR="\e[m"
 
-function _message {
+_message () {
     msg=$1
     color=$2
     echo -e "${color}${msg}${RESET_COLOR}"
 }
 
-function success {
+success () {
     _message "${1}" $SUCCESS_COLOR
 }
 
-function info {
+info () {
     _message "${1}" $INFO_COLOR
 }
 
-function debug {
+debug () {
     _message "${1}" $DEBUG_COLOR
 }
 
-function warn {
+warn () {
     _message "${1}" $WARN_COLOR
 }
 
-function error {
+error () {
     _message "error: ${1}" $ERROR_COLOR
 }
 
-function fail {
+fail () {
     _message "failed: ${1}" $ERROR_COLOR
     exit 1
 }
@@ -41,10 +40,10 @@ function fail {
 set -e
 
 # export the functions
-export -f success
-export -f info
-export -f debug
-export -f warn
-export -f error
-export -f fail
-export -f _message
+export success
+export info
+export debug
+export warn
+export error
+export fail
+export _message
