@@ -1,7 +1,7 @@
 describe "create-file step"
 
 before() {
-    lib/wercker-essentials.sh
+    . lib/wercker-essentials.sh
 }
 
 it_fails_when_filename_is_missing() {
