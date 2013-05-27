@@ -6,33 +6,33 @@ INFO_COLOR=$(tput setaf 7)
 DEBUG_COLOR=$(tput setaf 8)
 RESET_COLOR="\e[m"
 
-function _message() {
+function _message {
     msg=$1
     color=$2
     echo -e "${color}${msg}${RESET_COLOR}"
 }
 
-function success() {
+function success {
     _message "${1}" $SUCCESS_COLOR
 }
 
-function info() {
+function info {
     _message "${1}" $INFO_COLOR
 }
 
-function debug() {
+function debug {
     _message "${1}" $DEBUG_COLOR
 }
 
-function warn() {
+function warn {
     _message "${1}" $WARN_COLOR
 }
 
-function error() {
+function error {
     _message "error: ${1}" $ERROR_COLOR
 }
 
-function fail() {
+function fail {
     _message "failed: ${1}" $ERROR_COLOR
     exit 1
 }
