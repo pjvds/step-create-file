@@ -1,0 +1,16 @@
+box: wercker/blank
+build:
+  steps:
+    - script:
+        name: install roundup
+        code: |-
+          git clone git://github.com/bmizerany/roundup.git
+          cd roundup
+          ./configure
+          make
+          sudo make install
+    - script:
+        name: run tests
+        code: |-
+          cd $WERCKER_ROOT
+          roundup ./test/*-test.sh
