@@ -1,13 +1,7 @@
 describe "create-file step"
 
 before() {
-    if ! type -f "_message" &> /dev/null
-    then
-        echo "sourcing local wercker-essentials.sh"
-        source lib/wercker-essentials.sh
-    else
-        echo "wercker-essentials available"
-    fi
+    lib/wercker-essentials.sh
 }
 
 it_fails_when_filename_is_missing() {
