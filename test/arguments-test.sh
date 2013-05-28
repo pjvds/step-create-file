@@ -1,10 +1,14 @@
-describe "create-file step"
-
-it_fails_when_filename_is_missing () {
-    src/run.sh 2>&1 | grep -q "missing filename option"
+testExample() {
+    result=$(echo 'Hello, world!')
+    assertEquals "$result" 'Hello, world!'
 }
 
-it_fails_when_filename_is_empty_missing () {
-    export WERCKER_CREATE_FILE_FILENAME=""
-    src/run.sh 2>&1 | grep -q "missing filename option"
+testFailsWhenFilenameIsMissing () {
+    expected='missing filename option'
+    actual=$(./src/run.sh)
+
+    if [ "${actual#*$expected}" != "$string" ]
+    then
+        fail "failure message did not contain: $expected"
+    fi
 }

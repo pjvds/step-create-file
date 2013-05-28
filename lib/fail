@@ -1,0 +1,7 @@
+#!/bin/sh
+set -e
+ERROR_COLOR=$(tput setaf 1 ; tput bold)
+RESET_COLOR="\e[m"
+
+echo -e "${ERROR_COLOR}$1${RESET_COLOR}"
+exit 1

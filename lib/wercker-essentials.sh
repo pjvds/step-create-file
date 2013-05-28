@@ -35,15 +35,3 @@ fail () {
     _message "failed: ${1}" $ERROR_COLOR
     exit 1
 }
-
-# Make sure we fail on all errors
-set -e
-
-# export the functions
-export success
-export info
-export debug
-export warn
-export error
-export fail
-export _message

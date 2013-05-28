@@ -1,8 +1,10 @@
 #!/bin/sh
-set -a
-set -v
-set -E
-set -x
+directory="$(pwd)/lib"
+echo "Adding $directory to path"
+
+if [ -d "$directory" ] ; then
+  PATH="$PATH:$directory"
+fi
 
 . ./lib/wercker-essentials.sh
-roundup ./test/*-test.sh
+./lib/shunit2 ./test/arguments-test.sh

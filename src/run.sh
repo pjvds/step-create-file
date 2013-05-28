@@ -1,6 +1,8 @@
+set -e
+
 if [ -z "$WERCKER_CREATE_FILE_FILENAME" ]
 then
-    fail 'missing filename option, please add this the create-file step in wercker.yml'
+    fail 'missing content option, please add this the create-file step in wercker.yml'
 fi
 
 if [ -z "$WERCKER_CREATE_FILE_CONTENT" ]
@@ -18,7 +20,7 @@ then
     fi
 fi
 
-echo -e "$WERCKER_CREATE_FILE_CONTENT" > $WERCKER_CREATE_FILE_FILENAME
+echo -e "$WERCKER_CREATE_FILE_CONTENT" > "$WERCKER_CREATE_FILE_FILENAME"
 if [ "$WERCKER_CREATE_FILE_HIDE_FROM_LOG" = "true" ]
 then
     debug "$(cat $WERCKER_CREATE_FILE_FILENAME)"

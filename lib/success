@@ -1,0 +1,4 @@
+#!/bin/sh
+set -e
+
+echo -e "$(tput setaf 2 ; tput bold)$1\e[m"
